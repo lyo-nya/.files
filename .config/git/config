@@ -1,0 +1,11 @@
+[user]
+    name = Leonid Zhizhin
+    email = lazhizhin@yandex.ru
+[core]
+    editor = nvim
+[web]
+    browser = chromium
+[color]
+    ui = true
+[credential]
+	helper = libsecret

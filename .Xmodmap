@@ -1,0 +1,2 @@
+# Replace numpad enter with Return key
+keycode 104 = Return

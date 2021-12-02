@@ -1,0 +1,32 @@
+# Configuration for Alacritty, the GPU enhanced terminal emulator.
+import:
+  - '~/.config/alacritty/fonts.yml'
+  - '~/.config/alacritty/colors.yml'
+  - '~/.config/alacritty/mappings.yml'
+
+# Just flat window
+window:
+  padding:
+    x: 0
+    y: 0
+  dynamic_padding: false
+  decorations: none
+  dynamic_title: false
+
+# Scrolling settings
+scrolling:
+  history: 10000
+  multiplier: 5
+
+# I don't really use mouse much, so I prefer to hide it
+mouse:
+  hide_when_typing: true
+
+# Some default setting
+selection:
+  semantic_escape_chars: ",│`|:\"' ()[]{}<>\t\n/$"
+
+# Same as in vim
+cursor:
+  style: beam
+  vi_mode_style: block

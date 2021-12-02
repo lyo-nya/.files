@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# Tiny little script to wipe commits history
+git checkout --orphan TEMP_MASTER # Switch to temporary orphan (with new root commit) branch
+git add -A                        # Add all files
+git commit -m "Initial commit"    # Create new ``Initial'' commit
+git branch -D master              # Delete master branch
+git branch -m master              # Make current temporary branch master branch
+git push -f origin master         # Push commit to remote repository

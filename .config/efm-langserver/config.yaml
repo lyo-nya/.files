@@ -1,0 +1,47 @@
+---
+tools:
+  sh-shellcheck: &sh-shellcheck
+    lint-command: 'shellcheck -f gcc -x'
+    lint-source: 'shellcheck'
+    lint-formats:
+      - '%f:%l:%c: %trror: %m'
+      - '%f:%l:%c: %tarning: %m'
+      - '%f:%l:%c: %tote: %m'
+
+  sh-shfmt: &sh-shfmt
+    format-command: 'shfmt -ci -bn -i 4'
+    format-stdin: true
+
+  lua-format: &lua-format
+    format-command: 'lua-format -i'
+    format-stdin: true
+
+  python-yapf: &python-yapf
+    format-command: 'yapf --quiet'
+    format-stdin: true
+
+  python-isort: &python-isort
+    format-command: 'isort --quiet -'
+    format-stdin: true
+
+  yaml-yamllint: &yaml-yamllint
+    lint-command: 'yamllint -f parsable -'
+    lint-stdin: true
+
+languages:
+  sh:
+    - <<: *sh-shellcheck
+    - <<: *sh-shfmt
+  zsh:
+    - <<: *sh-shellcheck
+    - <<: *sh-shfmt
+
+  lua:
+    - <<: *lua-format
+
+  yaml:
+    - <<: *yaml-yamllint
+
+  python:
+    - <<: *python-yapf
+    - <<: *python-isort
