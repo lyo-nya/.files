@@ -11,3 +11,11 @@ alias config="/usr/bin/git --git-dir=$HOME/.files/ --work-tree=$HOME"
 alias ls="exa --icons --group-directories-first"
 alias la="ls -a"
 alias ll="la -l"
+
+# Venv
+alias mkenv="python3 -m venv"
+
+function activate {
+    source $1/bin/activate
+}
+

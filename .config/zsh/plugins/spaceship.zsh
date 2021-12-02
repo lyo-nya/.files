@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 # Prompts
-SPACESHIP_PROMPT_ORDER=(user host dir char)
+SPACESHIP_PROMPT_ORDER=(user host dir venv char)
 SPACESHIP_RPROMPT_ORDER=(git exec_time vi_mode)
 
 # Disable newline
@@ -23,6 +23,10 @@ SPACESHIP_HOST_COLOR_SSH=red
 SPACESHIP_DIR_PREFIX=""
 SPACESHIP_DIR_TRUNC=1
 SPACESHIP_DIR_COLOR="240"
+
+# Venv
+SPACESHIP_VENV_PREFIX=""
+SPACESHIP_VENV_GENERIC_NAMES=()
 
 # Char
 SPACESHIP_CHAR_SYMBOL="⮞ "

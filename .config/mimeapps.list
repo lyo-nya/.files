@@ -1,5 +1,5 @@
 [Default Applications]
-x-scheme-handler/tg=userapp-Telegram Desktop-2U4HD1.desktop
+x-scheme-handler/tg=userapp-Telegram Desktop-MRGHD1.desktop
 x-scheme-handler/http=chromium.desktop
 x-scheme-handler/https=chromium.desktop
 x-scheme-handler/about=chromium.desktop
@@ -13,4 +13,4 @@ text/x-script.python=nvim.desktop
 text/html=chromium.desktop
 
 [Added Associations]
-x-scheme-handler/tg=userapp-Telegram Desktop-VX7NB1.desktop;userapp-Telegram Desktop-2U4HD1.desktop;
+x-scheme-handler/tg=userapp-Telegram Desktop-VX7NB1.desktop;userapp-Telegram Desktop-2U4HD1.desktop;userapp-Telegram Desktop-MRGHD1.desktop;
