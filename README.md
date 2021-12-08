@@ -76,3 +76,4 @@ alias config="/usr/bin/git --git-dir=$HOME/.files/ --work-tree=$HOME"
 
 #### TODO
 - [ ] Configure LF
+- [ ] Fix Qtile floating mode lags

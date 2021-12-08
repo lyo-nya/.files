@@ -17,5 +17,5 @@ mapping = [
         lazy.window.set_size_floating(),
         start=lazy.window.get_size(),
     ),
-    Click([remaps.mod], "Button2", lazy.window.bring_to_front()),
+    Click([remaps.mod], "Button2", lazy.window.toggle_floating()),
 ]
