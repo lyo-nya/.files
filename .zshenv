@@ -7,6 +7,7 @@ export XDG_DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"
 
 # Add local scripts to path
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"
 
 # zsh configuration directory
 export ZDOTDIR=$XDG_CONFIG_HOME/zsh

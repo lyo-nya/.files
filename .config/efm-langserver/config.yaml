@@ -22,6 +22,12 @@ tools:
 
   python-isort: &python-isort
     format-command: 'isort --quiet -'
+
+  html-prettier: &html-prettier
+    format-command: './node_modules/.bin/prettier ${--tab-width:tabWidth} ${--single-quote:singleQuote} --parser html'
+
+  css-prettier: &css-prettier
+    format-command: './node_modules/.bin/prettier ${--tab-width:tabWidth} ${--single-quote:singleQuote} --parser css'
     format-stdin: true
 
   yaml-yamllint: &yaml-yamllint
@@ -45,3 +51,9 @@ languages:
   python:
     - <<: *python-yapf
     - <<: *python-isort
+
+  html:
+    - <<: *html-prettier
+
+  css:
+    - <<: *css-prettier
