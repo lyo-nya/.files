@@ -47,5 +47,5 @@ nvim_lsp.pyright.setup {
 nvim_lsp.efm.setup {
   capabilities = capabilities,
   root_dir = nvim_lsp.util.root_pattern({ '.git', '.config' }),
-  filetypes = { 'lua', 'bash', 'zsh', 'python', 'yaml', 'sh' },
+  filetypes = { 'lua', 'bash', 'zsh', 'python', 'yaml', 'sh', 'html', 'css' },
 }
