@@ -33,5 +33,4 @@ LF_ICONS=${LF_ICONS//$'\n'/:}
 export LF_ICONS
 
 # Start X session
-# exec startx
 [[ -z "$SSH_CLIENT" ]] && [[ -z "$SSH_TTY" ]] && exec startx
