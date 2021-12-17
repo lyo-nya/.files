@@ -43,9 +43,12 @@ nvim_lsp.pyright.setup {
   -- analysis = { diagnosticMode = 'workspace', useLibraryCodeForTypes = true },
 }
 
--- EFM
 nvim_lsp.efm.setup {
   capabilities = capabilities,
   root_dir = nvim_lsp.util.root_pattern({ '.git', '.config' }),
-  filetypes = { 'lua', 'bash', 'zsh', 'python', 'yaml', 'sh', 'html', 'css' },
+  filetypes = {
+    'lua', 'bash', 'zsh', 'python', 'yaml', 'sh', 'html', 'css', 'scss',
+    'javascript',
+  },
 }
+

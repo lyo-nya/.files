@@ -25,14 +25,23 @@ tools:
     format-stdin: true
 
   html-prettier: &html-prettier
-    format-command: './node_modules/.bin/prettier ${--tab-width:tabWidth} ${--single-quote:singleQuote} --parser html'
+    format-command: 'prettier ${--tab-width:tabWidth} ${--single-quote:singleQuote} --parser html'
 
   css-prettier: &css-prettier
-    format-command: './node_modules/.bin/prettier ${--tab-width:tabWidth} ${--single-quote:singleQuote} --parser css'
+    format-command: 'prettier ${--tab-width:tabWidth} ${--single-quote:singleQuote} --parser css'
 
   yaml-yamllint: &yaml-yamllint
     lint-command: 'yamllint -f parsable -'
     lint-stdin: true
+
+  javascript-eslint: &javascript-eslint
+    format-command: 'eslint_d -c ~/.config/eslint/eslintrc.yml -f unix --fix-to-stdout --stdin --stdin-filename ${INPUT}'
+    format-stdin: true
+    lint-command: 'eslint_d -c ~/.config/eslint/eslintrc.yml -f unix --stdin --stdin-filename ${INPUT}'
+    lint-ignore-exit-code: true
+    lint-stdin: true
+    lint-formats:
+      - "%f:%l:%c: %m"
 
 languages:
   sh:
@@ -54,5 +63,12 @@ languages:
 
   html:
     - <<: *html-prettier
+
   css:
     - <<: *css-prettier
+
+  scss:
+    - <<: *css-prettier
+
+  javascript:
+    - <<: *javascript-eslint
