@@ -61,7 +61,7 @@ require('lualine').setup {
           modified = { fg = '#ffc000' },
           removed = { fg = '#c70039' },
         },
-      }, { 'diagnostics', sources = { 'nvim_lsp' } },
+      }, { 'diagnostics', sources = { 'nvim_diagnostic' } },
     },
     lualine_y = { 'location' },
     lualine_z = { 'mode' },
