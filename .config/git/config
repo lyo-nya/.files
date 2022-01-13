@@ -9,3 +9,5 @@
     ui = true
 [credential]
 	helper = libsecret
+[pull]
+    rebase = false
