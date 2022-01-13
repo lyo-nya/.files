@@ -27,7 +27,11 @@ cmp.setup {
     { name = 'nvim_diagnostic' }, { name = 'luasnip' }, { name = 'nvim_lua' },
     { name = 'path' }, { name = 'buffer', keyword_length = 4 },
   },
-  snippet = { expand = function(args) luasnip.lsp_expand(args.body) end },
+  snippet = {
+    expand = function(args)
+      luasnip.lsp_expand(args.body)
+    end,
+  },
   formatting = {
     format = lspkind.cmp_format {
       with_text = true,
