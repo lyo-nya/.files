@@ -1,4 +1,5 @@
 local tele = require 'telescope.builtin'
+local file_browser = require 'telescope'.extensions.file_browser.file_browser
 local pickers = require 'telescope.pickers'
 local actions = require 'telescope.actions'
 local action_state = require 'telescope.actions.state'
@@ -41,7 +42,7 @@ function M.file_browser(opts)
     },
   }
   opts = vim.tbl_deep_extend('force', file_browser_opts, opts)
-  tele.file_browser(opts)
+  file_browser(opts)
 end
 
 -- Tuned telescope find_files

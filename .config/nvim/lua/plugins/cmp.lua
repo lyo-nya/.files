@@ -5,7 +5,7 @@ local lspkind = require 'lspkind'
 local luasnip = require 'luasnip'
 
 -- I don't have my own snippets yet
-require'luasnip.loaders.from_vscode'.load { include = { 'python', 'lua', 'sh' } }
+require'luasnip.loaders.from_vscode'.load { include = { 'python', 'lua', 'sh', 'html', 'css', 'javascript' } }
 
 -- Cmp
 -- This is more or less default configuration
@@ -24,7 +24,7 @@ cmp.setup {
     ['<CR>'] = cmp.mapping.confirm({ select = true }),
   },
   sources = {
-    { name = 'nvim_lsp' }, { name = 'luasnip' }, { name = 'nvim_lua' },
+    { name = 'nvim_diagnostic' }, { name = 'luasnip' }, { name = 'nvim_lua' },
     { name = 'path' }, { name = 'buffer', keyword_length = 4 },
   },
   snippet = { expand = function(args) luasnip.lsp_expand(args.body) end },
@@ -33,7 +33,7 @@ cmp.setup {
       with_text = true,
       menu = {
         buffer = '[Buffer]',
-        nvim_lsp = '[LSP]',
+        nvim_diagnostic = '[LSP]',
         nvim_lua = '[Lua]',
         path = '[Path]',
         luasnip = '[Snippet]',
