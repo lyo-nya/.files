@@ -30,6 +30,9 @@ tools:
   css-prettier: &css-prettier
     format-command: 'prettier ${--tab-width:tabWidth} ${--single-quote:singleQuote} --parser css'
 
+  scss-prettier: &scss-prettier
+    format-command: 'prettier ${--tab-width:tabWidth} ${--single-quote:singleQuote} --parser scss'
+
   yaml-yamllint: &yaml-yamllint
     lint-command: 'yamllint -f parsable -'
     lint-stdin: true
@@ -64,11 +67,14 @@ languages:
   html:
     - <<: *html-prettier
 
+  htmldjango:
+    - <<: *html-prettier
+
   css:
     - <<: *css-prettier
 
   scss:
-    - <<: *css-prettier
+    - <<: *scss-prettier
 
   javascript:
     - <<: *javascript-eslint

@@ -12,6 +12,7 @@ window:
   dynamic_padding: false
   decorations: none
   dynamic_title: false
+  opacity: 1.0
 
 # Scrolling settings
 scrolling:

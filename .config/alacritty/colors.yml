@@ -43,6 +43,3 @@ colors: *google
 
 # Its already bold, cmon
 draw_bold_text_with_bright_colors: false
-
-# I hate transparent windows
-background_opacity: 1.0

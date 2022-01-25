@@ -130,7 +130,7 @@ function M.diagnostics()
       },
     },
   }
-  tele.lsp_document_diagnostics(opts)
+  tele.diagnostics(opts)
 end
 
 -- Function to quickly get to dotfiles
