@@ -54,8 +54,8 @@ You should employ this option only if you are not going to change anything.
 Otherwise, use fork option and then clone your own repository.
 
 ### Cloning
-This files are supposed to be stored in bare git repository (see [this article](https://www.atlassian.com/git/tutorials/dotfiles) for example)
-So to clone this configuration files, use can use the following command
+This files are supposed to be stored in bare git repository (see [this article](https://www.atlassian.com/git/tutorials/dotfiles) for example).
+So to clone this configuration files, you can use the following command
 ```
 git clone --bare https://github.com/lyo-nya/.files.git $HOME/.files
 ```
