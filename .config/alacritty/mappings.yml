@@ -6,3 +6,4 @@ key_bindings:
   # I have vi-mode in zsh and i prefer to use them separately
   - { key: Escape, mods: Alt, mode: ~Vi|~AppCursor|~AppKeypad, action: ToggleViMode }
   - { key: I,                 mode: Vi,                        action: ToggleViMode }
+  - { key: H,      mods: Alt,                                  action: SpawnNewInstance}
