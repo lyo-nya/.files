@@ -30,7 +30,7 @@ return packer.startup(function()
     'nvim-telescope/telescope.nvim',
     requires = { { 'nvim-lua/plenary.nvim' } },
   }
-  use { "nvim-telescope/telescope-file-browser.nvim" }
+  use { 'nvim-telescope/telescope-file-browser.nvim' }
   -- Fuzzy finder for telescope
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
   -- Auto pairs
@@ -44,6 +44,9 @@ return packer.startup(function()
   }
   -- Tree-sitter
   use { 'nvim-treesitter/nvim-treesitter', run = 'TSUpdate' }
+  -- Markdown preview
+
+  use 'davidgranstrom/nvim-markdown-preview'
 
 end)
 

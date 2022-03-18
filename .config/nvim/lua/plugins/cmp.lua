@@ -5,7 +5,9 @@ local lspkind = require 'lspkind'
 local luasnip = require 'luasnip'
 
 -- I don't have my own snippets yet
-require'luasnip.loaders.from_vscode'.load { include = { 'python', 'lua', 'sh', 'html', 'css', 'javascript' } }
+require'luasnip.loaders.from_vscode'.load {
+  include = { 'python', 'lua', 'sh', 'html', 'css', 'javascript', 'latex' },
+}
 
 -- Cmp
 -- This is more or less default configuration
