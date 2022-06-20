@@ -8,10 +8,13 @@ export XDG_DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"
 # Go directory
 export GOPATH="$HOME/.local/share/go"
 
+# R profile path
+export R_PROFILE_USER="$XDG_CONFIG_HOME/R/.Rprofile"
+
 # Add local scripts to path
 export PATH="$HOME/.local/bin:$PATH"
-# export PATH="$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"
-export PATH="$HOME/.local/share/lua-language-server:$PATH"
+# export PATH="$XDG_DATA_HOME/gem/ruby/3.0.0/bin:$PATH"
+export PATH="$XDG_DATA_HOME/lua-language-server:$PATH"
 export PATH="$GOPATH/bin:$PATH"
 
 # zsh configuration directory
