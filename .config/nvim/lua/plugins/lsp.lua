@@ -53,3 +53,5 @@ nvim_lsp.efm.setup {
   },
 }
 
+-- R
+nvim_lsp.r_language_server.setup{}

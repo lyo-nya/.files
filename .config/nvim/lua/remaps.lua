@@ -40,7 +40,7 @@ remap('n', '<leader>.', [[ :lua require 'lyonya.finders'.edit_dotfiles() ]])
 -- LSP
 remap('n', '<leader>E', ':lua vim.lsp.diagnostic.show_line_diagnostics()')
 remap('n', 'K', ':lua vim.lsp.buf.hover()')
-remap('n', '<leader>p', ':lua vim.lsp.buf.formatting()')
+remap('n', '<leader>p', ':lua vim.lsp.buf.format()')
 
 -- Spell check
 remap('n', '<leader>S', ':setlocal spell!')

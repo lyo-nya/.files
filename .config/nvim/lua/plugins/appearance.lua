@@ -34,7 +34,7 @@ require'nvim-web-devicons'.setup { default = true }
 require('lualine').setup {
   options = {
     -- Use neovim theme (nice feature of lualine BTW)
-    theme = 'github',
+    theme = 'github_light_default',
     -- Simple flat borders
     section_separators = '',
     component_separators = '',
