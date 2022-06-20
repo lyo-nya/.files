@@ -14,7 +14,7 @@ local user = vim.fn.expand('$USER')
 local sumneko_path = '/.local/share/lua-language-server'
 local sumneko_root_path = '/home/' .. user .. sumneko_path
 local sumneko_binary_path =
-  sumneko_root_path .. '/bin/Linux/lua-language-server'
+  sumneko_root_path .. '/bin/lua-language-server'
 local runtime_path = vim.split(package.path, ';')
 
 table.insert(runtime_path, 'lua/?.lua')
