@@ -4,3 +4,6 @@ local({r <- getOption("repos")
 })
 
 .libPaths("~/.cache/R/library")
+
+# Linter settings
+options(lintr.linter_file="/home/lyonya/.config/lintr/config")
