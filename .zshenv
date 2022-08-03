@@ -8,6 +8,9 @@ export XDG_DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"
 # Go directory
 export GOPATH="$HOME/.local/share/go"
 
+# Rust directory
+export CARGO_HOME="$HOME/.local/share/cargo"
+
 # R profile path
 export R_PROFILE_USER="$XDG_CONFIG_HOME/R/.Rprofile"
 

@@ -14,7 +14,7 @@ o.clipboard = 'unnamedplus'
 o.swapfile = false
 
 -- Aesthetics
-o.colorcolumn = '80'
+o.colorcolumn = '120'
 o.cmdheight = 1
 o.showtabline = 0
 o.termguicolors = true

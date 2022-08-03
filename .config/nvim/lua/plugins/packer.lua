@@ -45,8 +45,9 @@ return packer.startup(function()
   -- Tree-sitter
   use { 'nvim-treesitter/nvim-treesitter', run = 'TSUpdate' }
   -- Markdown preview
-
   use 'davidgranstrom/nvim-markdown-preview'
+  -- View git diffs with vim
+  use 'sindrets/diffview.nvim'
 
 end)
 

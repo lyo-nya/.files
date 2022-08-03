@@ -38,7 +38,7 @@ remap('n', '<leader>e', [[ :lua require 'lyonya.finders'.diagnostics() ]])
 remap('n', '<leader>.', [[ :lua require 'lyonya.finders'.edit_dotfiles() ]])
 
 -- LSP
-remap('n', '<leader>E', ':lua vim.lsp.diagnostic.show_line_diagnostics()')
+remap('n', '<leader>E', ':lua vim.diagnostic.open_float()')
 remap('n', 'K', ':lua vim.lsp.buf.hover()')
 remap('n', '<leader>p', ':lua vim.lsp.buf.format()')
 

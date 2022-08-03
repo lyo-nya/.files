@@ -54,3 +54,15 @@ nvim_lsp.efm.setup {
 
 -- R
 nvim_lsp.r_language_server.setup { capabilities = capabilities }
+
+-- deno
+nvim_lsp.denols.setup {
+  -- on_attach = on_attach,
+  root_dir = nvim_lsp.util.root_pattern("deno.json", "deno.jsonc"),
+}
+
+-- TypeScript
+nvim_lsp.tsserver.setup {
+  -- on_attach = on_attach,
+  root_dir = nvim_lsp.util.root_pattern("package.json"),
+}
