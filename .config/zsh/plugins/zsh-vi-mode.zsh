@@ -1,3 +1,0 @@
-#!/bin/zsh
-
-ZVM_VI_INSERT_ESCAPE_BINDKEY=jk

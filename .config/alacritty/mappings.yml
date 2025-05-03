@@ -1,9 +1,0 @@
-# Key bindings
-key_bindings:
-  # Seems better than Crtl+Shift to me
-  - { key: V,      mods: Alt, mode: ~Vi,                       action: Paste }
-  - { key: C,      mods: Alt,                                  action: Copy }
-  # I have vi-mode in zsh and i prefer to use them separately
-  - { key: Escape, mods: Alt, mode: ~Vi|~AppCursor|~AppKeypad, action: ToggleViMode }
-  - { key: I,                 mode: Vi,                        action: ToggleViMode }
-  - { key: N,      mods: Alt,                                  action: SpawnNewInstance}

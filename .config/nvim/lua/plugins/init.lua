@@ -1,6 +1,0 @@
-require 'plugins.packer'
-require 'plugins.appearance'
-require 'plugins.lsp'
-require 'plugins.cmp'
-require 'plugins.treesitter'
-require 'plugins.telescope'
