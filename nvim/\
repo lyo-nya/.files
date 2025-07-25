@@ -1,8 +1,0 @@
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
-require("lspconfig").lua_ls.setup({
-	capabilities = capabilities,
-	workspace = { checkThirdParty = false, library = { vim.env.RUNTIME } },
-})
-require("lspconfig").nil_ls.setup({
-	capabilities = capabilities,
-})
