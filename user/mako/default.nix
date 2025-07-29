@@ -9,7 +9,6 @@ in
     enable = true;
     settings = {
       font = "JetBrainsMono Nerd Font 20";
-      default-timeout = 10000;
     };
   };
 
