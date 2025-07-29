@@ -1,16 +1,15 @@
 { ... }:
 let
-  themes = import ../theme "dunst";
+  themes = import ../theme "mako";
 in
 
 {
   inherit (themes) catppuccin;
-  services.dunst = {
+  services.mako = {
     enable = true;
-    settings.global = {
+    settings = {
       font = "JetBrainsMono Nerd Font 20";
-      offset = "0x0";
-      width = 400;
+      default-timeout = 10000;
     };
   };
 

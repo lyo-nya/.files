@@ -34,6 +34,8 @@ let
     hyprshot
     hyprpaper
     hyprcursor
+    # Control brightness
+    brightnessctl
   ];
 
 in
@@ -45,7 +47,7 @@ in
     zen-browser.homeModules.twilight
     # Text editor
     ./nvim
-    ./dunst
+    ./mako
     ./hypr
     ./kitty
     ./fish

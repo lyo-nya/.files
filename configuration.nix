@@ -75,8 +75,11 @@
 
   networking = {
     hostName = hostname;
-    networkmanager.enable = true;
-    wireless.iwd.enable = true;
+    useDHCP = true;
+    wireless.iwd = {
+      enable = true;
+      settings.General.EnableNetworkConfiguration = true;
+    };
   };
 
   hardware = {
