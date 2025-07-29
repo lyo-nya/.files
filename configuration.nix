@@ -75,6 +75,7 @@
 
   networking = {
     hostName = hostname;
+    networkmanager.enable = true;
     wireless.iwd.enable = true;
   };
 
