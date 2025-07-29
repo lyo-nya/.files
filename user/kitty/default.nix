@@ -15,7 +15,9 @@ in
 
     keybindings = {
       "ctrl+super+c" = "send_text all \\x03";
+      "ctrl+super+с" = "send_text all \\x03";
       "ctrl+super+d" = "send_text all \\x04";
+      "ctrl+super+в" = "send_text all \\x04";
       "ctrl+c" = "copy_to_clipboard";
       "ctrl+v" = "paste_from_clipboard";
       "ctrl+super+equal" = "change_font_size all +2.0";

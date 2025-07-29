@@ -20,7 +20,7 @@ in
   programs.rofi = {
     enable = true;
     package = pkgs.rofi-wayland;
-    font = "JetBrainsMono Nerd Font 32";
+    font = "JetBrainsMono Nerd Font 26";
     modes = [ "drun" ];
   };
   xdg.desktopEntries = TUIDesktopEntries;
