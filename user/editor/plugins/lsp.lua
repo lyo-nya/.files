@@ -40,3 +40,5 @@ lspconfig.lua_ls.setup({
 })
 
 lspconfig.nixd.setup({ capabilities = capabilities })
+lspconfig.ruff.setup({ capabilities = capabilities })
+lspconfig.pyright.setup({ capabilities = capabilities })

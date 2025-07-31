@@ -4,6 +4,7 @@ vim.g.termguicolors = true
 
 vim.opt.number = true
 vim.opt.relativenumber = true
+vim.opt.numberwidth = 1
 vim.opt.mouse = "a"
 vim.opt.showmode = false
 vim.opt.clipboard = "unnamedplus"
@@ -39,3 +40,9 @@ vim.opt.foldnestmax = 4
 vim.diagnostic.config({
 	float = { border = "rounded", source = true },
 })
+
+vim.api.nvim_set_hl(0, "NormalFloat", { link = "Normal" })
+vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none" })
+vim.api.nvim_set_hl(0, "Pmenu", { link = "Normal" })
+
+require("nvim-treesitter.configs").setup({ highlight = { enable = true, additional_vim_regex_hilighting = false } })

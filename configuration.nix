@@ -1,22 +1,12 @@
 {
   pkgs,
   hostname,
-  user,
-  catppuccin,
-  zen-browser,
+  catppuccinTheme,
+  ...
 }:
 
 {
-  imports = [
-    (import ./user {
-      inherit
-        pkgs
-        catppuccin
-        user
-        zen-browser
-        ;
-    })
-  ];
+  imports = [ ./user ];
 
   nixpkgs.config.allowUnfree = true;
   system.stateVersion = "25.05";
@@ -56,16 +46,15 @@
   };
 
   services = {
-    xserver.xkb.layout = "us,ru";
-    libinput.enable = true;
-    greetd = {
+    displayManager.sddm = {
       enable = true;
-      settings = {
-        default_session = {
-          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd hyprland";
-        };
-      };
+      wayland.enable = true;
+      package = pkgs.kdePackages.sddm;
     };
+    xserver = {
+      xkb.layout = "us,ru";
+    };
+    libinput.enable = true;
   };
 
   boot.loader = {
@@ -95,5 +84,9 @@
   };
 
   fonts.packages = [ pkgs.nerd-fonts.jetbrains-mono ];
+  catppuccin = {
+    enable = true;
+    flavor = catppuccinTheme;
+  };
 
 }

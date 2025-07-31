@@ -31,7 +31,9 @@ vim.api.nvim_create_autocmd("LspAttach", {
 			end
 		end, "[I]nline [H]ints")
 		map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
-		map("K", vim.lsp.buf.hover, "Hover Documentation")
+		map("K", function()
+			vim.lsp.buf.hover({ border = "single" })
+		end, "Hover Documentation")
 		map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
 
 		-- The following two autocommands are used to highlight references of the

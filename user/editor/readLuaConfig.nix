@@ -1,5 +1,4 @@
 { pkgs, ... }:
-
 let
   inherit (pkgs.lib.strings) hasSuffix concatStringsSep;
   inherit (builtins) readDir attrNames readFile;
@@ -21,33 +20,5 @@ let
   pwd = (builtins.toString ./.);
   luaFile = hasSuffix ".lua";
 
-  luaConfig = combineFilesRecursive pwd luaFile;
-  themes = import ../theme "nvim";
 in
-{
-  inherit (themes) catppuccin;
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-    viAlias = true;
-    vimAlias = true;
-    vimdiffAlias = true;
-    plugins = with pkgs.vimPlugins; [
-      nvim-lspconfig
-      nvim-treesitter.withAllGrammars
-      telescope-nvim
-      telescope-fzf-native-nvim
-      telescope-ui-select-nvim
-      telescope-fzf-native-nvim
-      conform-nvim
-      nvim-cmp
-      cmp-nvim-lsp
-      cmp-buffer
-      cmp-path
-      cmp-cmdline
-      which-key-nvim
-      neodev-nvim
-    ];
-    extraLuaConfig = luaConfig;
-  };
-}
+combineFilesRecursive pwd luaFile

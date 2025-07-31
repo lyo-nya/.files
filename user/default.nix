@@ -1,13 +1,15 @@
 {
   pkgs,
-  catppuccin,
   user,
-  zen-browser,
+  catppuccinTheme,
+  ...
 }:
 {
-  imports = [ ./steam ];
+  imports = [ ./steam.nix ];
   programs = {
     fish.enable = true;
+    # Required for uv to work
+    nix-ld.enable = true;
   };
   users = {
     defaultUserShell = pkgs.zsh;
@@ -21,6 +23,12 @@
     backupFileExtension = "backup";
     useGlobalPkgs = true;
     useUserPackages = true;
-    users."${user}" = import ./home.nix { inherit pkgs catppuccin zen-browser; };
+    users."${user}" = {
+      imports = [ ./home.nix ];
+      catppuccin = {
+        enable = true;
+        flavor = catppuccinTheme;
+      };
+    };
   };
 }

@@ -23,28 +23,35 @@
       ...
     }:
     let
-      system = "x86_64-linux";
       user = "lyonya";
       hostname = "large";
-      pkgs = nixpkgs.legacyPackages."${system}";
+      system = "x86_64-linux";
     in
     {
       pkgs.config.allowUnfree = true;
       nixosConfigurations."${hostname}" = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          user = user;
+          hostname = hostname;
+          catppuccinTheme = "mocha";
+        };
         system = system;
         modules = [
+          # NixOS modules
           home-manager.nixosModules.home-manager
           catppuccin.nixosModules.catppuccin
+          # Home modules
+          {
+            home-manager.users."${user}" = {
+              imports = [
+                catppuccin.homeModules.catppuccin
+                zen-browser.homeModules.twilight
+              ];
+            };
+          }
+          # My configuration
           ./hardware-configuration.nix
-          (import ./configuration.nix {
-            inherit
-              pkgs
-              hostname
-              user
-              catppuccin
-              zen-browser
-              ;
-          })
+          ./configuration.nix
         ];
       };
     };
