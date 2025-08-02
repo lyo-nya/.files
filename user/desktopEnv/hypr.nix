@@ -27,14 +27,17 @@ let
       0
     ]
   );
-  bindApp =
-    isMain: key: app:
+  bindAppWithMode =
+    isMain: key: mode: app:
     let
       mod = if isMain then mainMod else altMod;
     in
     {
-      wayland.windowManager.hyprland.settings.bind = [ "${mod}, ${key}, exec, ${uwsm app}" ];
+      wayland.windowManager.hyprland.settings.bind = [ "${mod}, ${key}, exec, [${mode}] ${uwsm app}" ];
     };
+  bindApp =
+    isMain: key: app:
+    (bindAppWithMode isMain key "tile" app);
 
 in
 {
@@ -94,6 +97,8 @@ in
         windowrulev2 = [
           "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
           "suppressevent maximize, class:.*"
+          "float,title:^()$"
+          "size 2560 1440,title:^()$"
         ];
       };
       systemd.enable = false;

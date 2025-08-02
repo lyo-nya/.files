@@ -7,7 +7,7 @@ in
     (import ./basics { inherit wm; })
     (import ./terminal.nix { bindApp = wm.bindApp; })
     (import ./browser { bindApp = wm.bindApp; })
-    (import ./appLauncher.nix { bindApp = wm.bindApp; })
+    (import ./appLauncher.nix { inherit wm; })
     (wm.setup)
 
   ];

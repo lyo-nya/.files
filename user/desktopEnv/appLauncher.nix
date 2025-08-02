@@ -1,4 +1,4 @@
-{ bindApp }:
+{ wm }:
 { pkgs, lib, ... }:
 
 let
@@ -6,7 +6,7 @@ let
     name = pkg.pname;
     value = {
       name = pkg.pname;
-      exec = pkg.pname;
+      exec = (wm.runApp "${pkg.pname}");
       genericName = pkg.meta.description;
       terminal = true;
       type = "Application";
@@ -16,11 +16,16 @@ let
   TUIApps = with pkgs; [
     bluetui
     impala
+    btop-rocm
   ];
   TUIDesktopEntries = builtins.listToAttrs (map addDesktopEntry TUIApps);
 in
 lib.mkMerge [
   {
+    programs.btop = {
+      enable = true;
+      package = pkgs.btop-rocm;
+    };
     home.packages = TUIApps;
     programs.rofi = {
       enable = true;
@@ -30,5 +35,5 @@ lib.mkMerge [
     };
     xdg.desktopEntries = TUIDesktopEntries;
   }
-  (bindApp true "SPACE" "rofi -show drun")
+  (wm.bindApp true "SPACE" "rofi -show drun")
 ]

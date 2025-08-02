@@ -34,6 +34,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		map("K", function()
 			vim.lsp.buf.hover({ border = "single" })
 		end, "Hover Documentation")
+		vim.keymap.set("i", "C-M-k", vim.lsp.buf.signature_help)
 		map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
 
 		-- The following two autocommands are used to highlight references of the

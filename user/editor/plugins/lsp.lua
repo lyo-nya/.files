@@ -40,5 +40,44 @@ lspconfig.lua_ls.setup({
 })
 
 lspconfig.nixd.setup({ capabilities = capabilities })
-lspconfig.ruff.setup({ capabilities = capabilities })
-lspconfig.pyright.setup({ capabilities = capabilities })
+lspconfig.ruff.setup({
+	settings = { logLevel = "info" },
+	capabilities = capabilities,
+	-- on_attach = function(client)
+	-- 	client.server_capabilities.hoverProvider = false
+	-- end,
+})
+lspconfig.pyright.setup({
+	capabilities = capabilities,
+	on_attach = function(client)
+		client.server_capabilities.hoverProvider = false
+	end,
+})
+lspconfig.rust_analyzer.setup({
+	capabilities = capabilities,
+	settings = {
+		["rust-analyzer"] = {
+			checkOnSave = true,
+			check = {
+				command = "clippy",
+				extraArgs = {
+					"--",
+					"--no-deps",
+					"-Dclippy::correctness",
+					"-Dclippy::complexity",
+					"-Dclippy::perf",
+					"-Dclippy::pedantic",
+					"-Aclippy::module_name_repetitions",
+				},
+			},
+		},
+	},
+})
+
+vim.lsp.config(
+	"ty",
+	{ cmd = { "ty", "server" }, filetypes = { "python" }, root_markers = { "ty.toml", "pyproject.toml", ".git" } }
+)
+vim.lsp.enable("ty")
+
+require("lsp_signature").setup({ hint_enable = false })

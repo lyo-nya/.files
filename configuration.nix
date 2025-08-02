@@ -9,6 +9,7 @@
   imports = [ ./user ];
 
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.rocmSupport = true;
   system.stateVersion = "25.05";
   time.timeZone = "Europe/Belgrade";
 
@@ -53,6 +54,7 @@
     };
     xserver = {
       xkb.layout = "us,ru";
+      videoDrivers = [ "amdgpu" ];
     };
     libinput.enable = true;
   };
@@ -72,6 +74,9 @@
   };
 
   hardware = {
+    graphics = {
+      enable32Bit = true;
+    };
     bluetooth = {
       enable = true;
       powerOnBoot = true;

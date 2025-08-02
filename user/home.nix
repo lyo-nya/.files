@@ -27,8 +27,6 @@
       # Utilities
       telegram-desktop
       vlc
-      # Python
-      uv
     ];
 
   };

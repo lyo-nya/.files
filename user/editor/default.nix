@@ -3,14 +3,27 @@
 {
   home.packages = with pkgs; [
     # Language servers and formatters
+    # Nix
     nixd
-    lua-language-server
+    nixfmt-rfc-style
+    # Python
+    ty
     ruff
     pyright
+    basedpyright
+    # SQL
     sqlfluff
-    prettierd
+    # Lua
     stylua
-    nixfmt-rfc-style
+    # Rust
+    cargo
+    rustc
+    rustfmt
+    rust-analyzer
+    clippy
+    # Other
+    lua-language-server
+    prettierd
     taplo
     # For searching
     ripgrep
@@ -24,6 +37,7 @@
     plugins = with pkgs.vimPlugins; [
       nvim-lspconfig
       nvim-treesitter.withAllGrammars
+      lsp_signature-nvim
       telescope-nvim
       telescope-fzf-native-nvim
       telescope-ui-select-nvim
@@ -34,6 +48,7 @@
       cmp-path
       cmp-cmdline
       which-key-nvim
+      # Mini
       mini-diff
       mini-statusline
       mini-icons
