@@ -20,6 +20,11 @@
     platformTheme.name = "kvantum";
   };
 
+  gtk = {
+    enable = true;
+    gtk3.extraConfig.gtk-application-prefer-dark-theme = true;
+  };
+
   home = {
     stateVersion = "25.05";
     sessionVariables.NIXOS_OZONE_WL = "1";

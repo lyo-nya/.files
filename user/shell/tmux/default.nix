@@ -5,7 +5,7 @@
     enable = true;
     keyMode = "vi";
     mouse = true;
-    prefix = "C-M-space";
+    prefix = "C-space";
     baseIndex = 1;
     extraConfig = builtins.readFile ./extras.conf;
   };

@@ -1,7 +1,7 @@
 { lib }:
 let
   inherit (lib.lists) imap1 flatten;
-  mainMod = "CONTROL";
+  mainMod = "SUPER";
   altMod = "Alt";
   uwsm = app: "uwsm app -- ${app}";
   addAutoStart = app: {
@@ -65,8 +65,10 @@ in
         dwindle.preserve_split = true;
         master.new_status = "master";
         input = {
+          follow_mouse = 1;
+          mouse_refocus = false;
           kb_layout = "us,ru";
-          kb_options = "grp:ctrl_shift_toggle,ctrl:swap_lwin_lctl";
+          kb_options = "grp:alt_shift_toggle";
           kb_variant = "mac";
         };
         bind = [
@@ -86,6 +88,9 @@ in
           "${mainMod}, mouse:272, movewindow"
           "${mainMod}, mouse:273, resizewindow"
         ];
+        bindc = [
+          "${mainMod}, mouse:274, togglefloating"
+        ];
         bindl = [
           ",XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
           ",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
@@ -98,7 +103,9 @@ in
           "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
           "suppressevent maximize, class:.*"
           "float,title:^()$"
-          "size 2560 1440,title:^()$"
+          "size 2560 1440,title:^()$,class:^(?!steam)"
+          "stayfocused, title:^()$,class:^(steam)$"
+          "minsize 1 1, title:^()$,class:^(steam)$"
         ];
       };
       systemd.enable = false;

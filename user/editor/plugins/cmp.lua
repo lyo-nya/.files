@@ -14,10 +14,10 @@ cmp.setup({
 	},
 	completion = { completeopt = "menu,menuone,noinsert" },
 	mapping = cmp.mapping.preset.insert({
-		["<C-D-n>"] = cmp.mapping.select_next_item(),
-		["<C-D-p>"] = cmp.mapping.select_prev_item(),
-		["<C-D-y>"] = cmp.mapping.confirm({ select = true }),
-		["<C-D-Space>"] = cmp.mapping.complete({}),
+		["<C-n>"] = cmp.mapping.select_next_item(),
+		["<C-p>"] = cmp.mapping.select_prev_item(),
+		["<C-y>"] = cmp.mapping.confirm({ select = true }),
+		["<C-Space>"] = cmp.mapping.complete({}),
 	}),
 	sources = {
 		{ name = "nvim_lsp" },
@@ -28,7 +28,7 @@ cmp.setup({
 })
 
 local cmdlineMapping = cmp.mapping.preset.cmdline({
-	["<C-D-n>"] = {
+	["<C-n>"] = {
 		c = function(fallback)
 			if cmp.visible() then
 				cmp.select_next_item()
@@ -37,7 +37,7 @@ local cmdlineMapping = cmp.mapping.preset.cmdline({
 			end
 		end,
 	},
-	["<C-D-p>"] = {
+	["<C-p>"] = {
 		c = function(fallback)
 			if cmp.visible() then
 				cmp.select_prev_item()
@@ -46,7 +46,7 @@ local cmdlineMapping = cmp.mapping.preset.cmdline({
 			end
 		end,
 	},
-	["<C-D-y>"] = {
+	["<C-y>"] = {
 		c = cmp.mapping.confirm({ select = false }),
 	},
 })
